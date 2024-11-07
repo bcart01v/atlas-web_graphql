@@ -12,5 +12,18 @@ const TaskType = new GraphQLObjectType({
         description: { type: GraphQLString }
     })
 })
-// I assume this will be needed at some point.
-module.exports = TaskType;
+
+const RootQuery = new GraphQLObjectType({
+    name: 'RootQueryType',
+    fields: {
+      task: {
+        type: TaskType,
+        args: { id: { type: GraphQLString } },
+        resolve(parent, args) {}
+      }
+    }
+  });
+  
+  module.exports = new GraphQLSchema({
+    query: RootQuery
+  });
