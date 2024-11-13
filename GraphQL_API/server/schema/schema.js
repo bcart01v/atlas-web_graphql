@@ -1,3 +1,6 @@
+// Schema.js
+// This file is the schema for the GraphQL API.
+// BJC 2024-10-28
 const { GraphQLObjectType, GraphQLSchema, GraphQLID, GraphQLString, GraphQLInt, GraphQLList } = require("graphql");
 const _ = require('lodash');
 
@@ -80,6 +83,18 @@ const RootQuery = new GraphQLObjectType({
       args: { id: { type: GraphQLID } },
       resolve(parent, args) {
         return _.find(projects, { id: args.id });
+      }
+    },
+    tasks: {
+      type: new GraphQLList(TaskType),
+      resolve(parent, args) {
+        return tasks;
+      }
+    },
+    projects: {
+      type: new GraphQLList(ProjectType),
+      resolve(parent, args) {
+        return projects;
       }
     }
   }
