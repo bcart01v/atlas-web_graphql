@@ -1,0 +1,16 @@
+mutation {
+  addTask(
+    title: "Implement HTML Structure",
+    weight: 2,
+    description: "Create the basic HTML structure including head and body sections.",
+    projectId: "your_project_id"
+  ) {
+    id
+    title
+    weight
+    description
+    project {
+      title
+    }
+  }
+}

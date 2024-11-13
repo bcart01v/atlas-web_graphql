@@ -1,0 +1,12 @@
+mutation {
+  addProject(
+    title: "Advanced HTML Project",
+    weight: 1,
+    description: "A project focused on advanced HTML structure and elements."
+  ) {
+    id
+    title
+    weight
+    description
+  }
+}
