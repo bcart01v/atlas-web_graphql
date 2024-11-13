@@ -2,7 +2,6 @@
 // This file is the schema for the GraphQL API.
 // BJC 2024-10-28
 const { GraphQLObjectType, GraphQLSchema, GraphQLID, GraphQLString, GraphQLInt, GraphQLList, GraphQLNonNull } = require("graphql");
-const _ = require('lodash');
 const Project = require('../models/project');
 const Task = require('../models/task');
 
